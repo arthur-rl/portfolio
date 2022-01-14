@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "0.0.1",
+  "description": "A fresh new Architect project!",
+  "scripts": {
+    "build-config": "arc-compile --input ./config/** --output ./app.arc",
+    "start": "npm run build-config && npx sandbox",
+    "start:dev": "npm run build-config && tsc -p . && npx sandbox"
+  },
+  "devDependencies": {
+    "@architect/architect": "^9.5.4",
+    "@types/node": "^17.0.8",
+    "@types/uuidv4": "^5.0.0",
+    "arc-config-compiler": "^1.0.6"
+  },
+  "dependencies": {
+    "@architect/functions": "^4.1.1",
+    "@types/architect__functions": "^3.13.6",
+    "dynamodb-onetable": "^2.2.1",
+    "uuidv4": "^6.2.12"
+  }
+}

@@ -6,9 +6,11 @@ import { faInfoCircle, faProjectDiagram } from "@fortawesome/free-solid-svg-icon
 import Projects from "./components/Projects";
 import Typewriter from "../../components/TypeWriter";
 import { useRef } from "react";
+import AboutMe from "./components/AboutMe";
 
 export default function Home() {
 
+    const aboutRef = useRef(null);
     const projectRef = useRef(null);
 
     const strings: string[] = [
@@ -41,6 +43,7 @@ export default function Home() {
                     </div>
                 </Container>
             </Container>
+            {/* <AboutMe innerRef={aboutRef}/> */}
             <Projects innerRef={projectRef}/>
         </>
     )
