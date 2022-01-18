@@ -5,6 +5,8 @@ const model = {
     sk: { type: String, value: 'project:' },
     id: { type: String },
     name: { type: String, required: true },
+    desc: { type: String, required: true },
+    image: { type: String, required: true },
     shown: {type: Boolean, default: true}
 }
 

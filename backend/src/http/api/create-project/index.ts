@@ -6,8 +6,11 @@ export const handler = arc.http.async(
     getTables,
     async function(req: HttpRequestWithTable) {
         let Project = req.table.getModel<ProjectModelType>("Project");
+        const { name, desc, image } = req.body;
         const project = await Project.create({
-            name: "ApplyX",
+            name,
+            desc,
+            image,
             id: uuidv4()
         });
         return {
