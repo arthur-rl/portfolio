@@ -1,5 +1,6 @@
 import arc, { HttpHandler } from '@architect/functions';
 import bcrypt from 'bcrypt';
+import { CORS } from '../../constants';
 
 export const handler = arc.http.async(async function(req) {
         const { username, password } = req.body;
@@ -12,19 +13,27 @@ export const handler = arc.http.async(async function(req) {
                 return {
                     status: 200,
                     headers : {
-                        "set-cookie": cookie
-                    }
-                }
+                        "set-cookie": cookie,
+                        ...CORS
+                    },
+                    json: {logged_in: true, username: process.env.ADMIN_USERNAME}
+                } as any
             } else {
                 return {
                     status: 401,
-                    json: {message: "Username or password incorrect"}
-                }
+                    json: {message: "Username or password incorrect"},
+                   headers: {
+                        ...CORS
+                   }
+                } as any
             }
         } catch (e) {
             console.log(e);
             return {
-                status: 500
-            }
+                status: 500,
+                headers: {
+                    ...CORS
+                }
+            } as any
         }
 } as HttpHandler);

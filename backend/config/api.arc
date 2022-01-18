@@ -1,5 +1,9 @@
 @http
 
+/*
+  method options
+  src dist/http/misc/options
+
 /api/projects
   method get
   src dist/http/api/get-projects
