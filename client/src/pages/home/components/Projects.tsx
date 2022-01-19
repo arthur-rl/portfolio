@@ -34,10 +34,10 @@ function Projects(props: Props) {
     useEffect(() => {
         axios({
             method: "GET",
-            url: "http://localhost:3333/api/projects"
+            url: "/api/projects"
         }).then(d => {
             setProjects(d.data)
-        })
+        });
     }, []);
 
     const onCreateProjectClick = () => {

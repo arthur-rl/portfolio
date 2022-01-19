@@ -3,3 +3,6 @@ config
 app.arc
 dist
 node_modules
+backend/src/**/*.js
+sam.json
+sam.yaml

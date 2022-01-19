@@ -1,6 +1,6 @@
 import arc, { HttpHandler } from '@architect/functions';
-import bcrypt from 'bcrypt';
-import { CORS } from '../../constants';
+import bcrypt from 'bcryptjs';
+import {CORS} from '@architect/shared/constants';
 
 export const handler = arc.http.async(async function(req) {
         const { username, password } = req.body;
@@ -23,7 +23,7 @@ export const handler = arc.http.async(async function(req) {
                     status: 401,
                     json: {message: "Username or password incorrect"},
                    headers: {
-                        ...CORS
+                        // ...CORS
                    }
                 } as any
             }
@@ -32,7 +32,7 @@ export const handler = arc.http.async(async function(req) {
             return {
                 status: 500,
                 headers: {
-                    ...CORS
+                    // ...CORS
                 }
             } as any
         }

@@ -1,8 +1,8 @@
 {
     "compilerOptions": {
         "target": "es6",
+        "baseUrl": ".",
         "module": "commonjs",
-        "outDir": "dist",
         "removeComments": true,
         "strict": true,
         "skipLibCheck": true,
@@ -12,6 +12,9 @@
         "types": [
             "node"
         ],
+        "paths": {
+            "@architect/shared/*": ["src/shared/*"]
+        },
         "esModuleInterop": true,
         "strictPropertyInitialization": false
     },

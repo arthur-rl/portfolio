@@ -1,5 +1,5 @@
 import arc, { HttpHandler } from '@architect/functions';
-import { CORS } from '../../constants';
+import { CORS } from '@architect/shared/constants';
 
 export const handler = arc.http.async(async function(req) {
     const session = await arc.http.session.read(req);

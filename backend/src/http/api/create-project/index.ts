@@ -1,8 +1,8 @@
 import arc, { HttpHandler } from '@architect/functions';
-import { ProjectModelType } from '../../../schema/Project';
-import { getTables, HttpRequestWithTable } from '../../middleware/tables';
+import { ProjectModelType } from '@architect/shared/schema/Project';
+import { getTables, HttpRequestWithTable } from '@architect/shared/middleware';
 import { v4 as uuidv4 } from "uuid";
-import { CORS } from '../../constants';
+import { CORS } from '@architect/shared/constants';
 export const handler = arc.http.async(
     getTables,
     async function(req: HttpRequestWithTable) {

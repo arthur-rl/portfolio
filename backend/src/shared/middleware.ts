@@ -1,6 +1,6 @@
 import arc, { HttpHandler, HttpRequest, HttpResponse } from "@architect/functions";
 import { Table } from "dynamodb-onetable";
-import schema from "../../schema";
+import schema from "./schema";
 
 export interface HttpRequestWithTable extends HttpRequest {
     table: Table

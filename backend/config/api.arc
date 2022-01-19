@@ -2,11 +2,11 @@
 
 /*
   method options
-  src dist/http/misc/options
+  src src/http/misc/options
 
 /api/projects
   method get
-  src dist/http/api/get-projects
+  src src/http/api/get-projects
 /api/projects
   method post
-  src dist/http/api/create-project
+  src src/http/api/create-project
