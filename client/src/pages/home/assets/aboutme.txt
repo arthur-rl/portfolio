@@ -1,0 +1,6 @@
+Hi, my name is Arthur Langley and I am from the United Kingdom. Currently working as a Software Engineer for CMG Studios Limited, with experience in Typescript, React, Node.js, JavaScript, Docker, NGINX. </br>
+I get great motivation for always wanting to learn the latest and greatest languages and technologies.</br>
+ 
+
+ I have had a passion for computers and coding from a very young age, I used to tinker & play with old laptops my Dad would bring home from work.</br>
+I remember on my 8th birthday my parents bought me a <a href="https://kano.me/">Kano</a> kit: This ignited a real spark, a passion for coding, I'd always find new ways to customise the OS or make a new project in scratch.</br>

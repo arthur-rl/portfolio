@@ -1,16 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/home';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './pages/login';
+import { connect } from 'react-redux';
+import axios from 'axios';
 
-function App() {
+function App(props: {dispatch: Function, loggedInState: boolean}) {
+    useEffect(() => {
+        if(!props.loggedInState) {
+            axios({
+                method: "GET",
+                url: "http://localhost:3333/auth/state",
+                withCredentials: true
+            }).then(d => {
+                if(d.status === 200) {
+                    props.dispatch({type: "SET_AUTH_STATE", state: d.data});
+                }
+            });
+        }
+    }, []);
+
     return (
         <BrowserRouter>
             <Routes>
                 <Route element={<Home/>} path="/"/>
+                <Route element={<Login/>} path="/login"/>
             </Routes>
         </BrowserRouter>
     );
 }
 
-export default App;
+const mapStateToProps = (state: any) => ({
+    loggedInState: state.authState.logged_in
+});
+
+export default connect(mapStateToProps)(App);
